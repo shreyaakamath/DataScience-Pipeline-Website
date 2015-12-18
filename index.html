@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Responsive Table</title>
+    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+
+
+    
+    <link rel="stylesheet" href="css/normalize.css">
+
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <center><h1>Movie Matcher- Amazon vs Rotten Tomatoes</h1></center>
+<h2>Introduction</h2>
+<p>Goal- Data Science Pipeline Implementation </p>
+<p>Team Members</p>
+<ul>
+  <li>Mushahid Alam</li>
+  <li>Shreya Kamath</li>
+</ul>
+<p>Deliverables</p>
+<ul>
+  <li>Develop crawlers to collect raw HTML data from two websites that operate in the same domain</li>
+  <li>Develop wrappers to extract the relevant movie attributes from the raw HTML data . Create a csv file with the extracted attributes</li>
+  <li>Perform blocking on the two csv files in order to eliminate the obvious non matches from the combines table</li>
+  <li>Manually create golden data by randomly sampling the blocked tables</li>
+  <li>Use the golden data to train a set of matchers. Use cross validation to determine the precision , recall and F1 measure of the matchers</li>
+  <li>Based on the above determine which is the best matcher</li>
+
+   
+</ul>
+<h2>Sites Chosen</h2>
+<ul>
+  <li><a href="http://www.amazon.com/s/ref=lp_2650363011_nr_n_0?fst=as%3Aoff&rh=n%3A2625373011%2Cp_n_theme_browse-bin%3A2650363011%2Cn%3A%212625374011%2Cn%3A2649512011&bbn=2650363011&ie=UTF8&qid=1444769787&rnid=2625374011"><font color="black">Amazon</font></a></li>
+  <br>
+  <li><a href="http://www.rottentomatoes.com//browse/dvd-all/?services=amazon;amazon_prime;flixster;hbo_go;itunes;netflix_iw;vudu&genres=1"><font color="black">Rotten Tomatoes</font></a></li>
+</ul>
+<h2>Stage 1- Extraction</h2>
+<p>Selected Amazon.com and RottenTomatoes.com as the two websited to be used for the project. </p>
+<p>Developed crawlers to crawl and extract movie attributes for the genres : Action , Drama.</p>
+<p> Extracted movie attributes of Amazon are in TableA and attributes of Rotten Tomatoes are in TableB.</p>
+<table class="rwd-table">
+  <tr>
+    <th>HTML Pages </a></th>
+    <th>CSV Files</th>
+  </tr>
+   <tr>
+     <th><a href="amazonHTML"><font color="white">Amazon</font> </a></th>
+    <th><a href="tableA.csv"><font color="white">Table A</font> </a></th>
+  </tr>
+  <tr>
+      <th><a href="rottenHTML"><font color="white">Rotten Tomatoes</font> </a></th>
+    <th><a href="tableB.csv"><font color="white">Table B</font> </a></th>
+  </tr>
+</table>
+<br>
+<h2>Stage 2- Blocking</h2>
+<p>Performed blocking on the tables obtained in stage 1</p>
+<p>Applied overlap blocker , Rule based blocker , Blackbox blocker. Refer to the blocking explanation document for further details. </p>
+<table class="rwd-table">
+  <tr>
+    <th><a href="tableC.csv"><font color="white">Blocked Tables - TableC</font></a></th>
+  </tr>
+   <tr>
+     <th><a href="blocking-explanation.pdf"><font color="white">Blocking Explanation</font> </a></th>
+  </tr>
+  <tr>
+      <th><a href="Movie_Amazon_RottenTomatoes.ipynb"><font color="white">Blocking iPython File</font> </a></th>    
+  </tr>
+</table>
+
+<br>
+<h2>Stage 3- Matching</h2>
+<p>Manually created golden data based by sampling 450 tuples from the table obtained in stage 2</p>
+<p>Created feature vectors and used them to determine the best Matcher using  cross validation. Refer to the matching explanation document for further details</p>
+<table class="rwd-table">
+  <tr>
+    <th><a href="tableG.csv"><font color="white">Golden Data- Table G</font></a></th>
+  </tr>
+   <tr>
+     <th><a href="Final_Matches.csv"><font color="white">Final Matched Tables</font> </a></th>
+  </tr>
+  <tr>
+      <th><a href="CS784_Stage3_Matching_Explanation.pdf"><font color="white">Matching Explanation</font> </a></th>    
+  </tr>
+   <tr>
+      <th><a href="CS784_Stage3"><font color="white">Matching iPython File</font> </a></th>    
+  </tr>
+</table>
+
+<br>
+<h2>Final File Submission</h2>
+<table class="rwd-table">
+  <tr>
+    <th>HTML Pages </a></th>
+    <th>CSV Files</th>
+  </tr>
+   <tr>
+     <th><a href="amazonHTML"><font color="white">Original input tables</font> </a></th>
+    <th>
+      <a href="tableA.csv"><font color="white">Table A</font> </a>
+      <a href="tableB.csv"><font color="white">Table B</font> </a>
+     </th>
+  </tr>
+ <tr>
+     <th><a href="amazonHTML"><font color="white">Input tables with error fixes</font> </a></th>
+    <th>
+      <a href="tableA.csv"><font color="white">Table A</font> </a>
+     </th>
+  </tr>
+<tr>
+     <th><a href="amazonHTML"><font color="white">Labeled data with error fixes</font> </a></th>
+    <th>
+      <a href="tableA.csv"><font color="white">Table G</font> </a>
+     </th>
+  </tr>
+<tr>
+     <th><a href="amazonHTML"><font color="white">Matching iPython file</font> </a></th>
+    <th>
+      <a href="tableA.csv"><font color="white">ipython file</font> </a>
+     </th>
+  </tr>
+ 
+</table>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
